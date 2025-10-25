@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Software Project Management — Mock Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <h1>Software Project Management</h1>
+        <p class="tag">Mock Test & Practice — (From uploaded PDF)</p>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="panel control-panel card">
+        <div class="field">
+          <label for="mode">Mode</label>
+          <select id="mode">
+            <option value="practice">Practice (see answers instantly)</option>
+            <option value="mock">Mock Test (timed)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="week">Week</label>
+          <select id="week">
+            <option value="all">All Weeks</option>
+            <!-- weeks populated by JS -->
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="duration">Mock Duration (minutes)</label>
+          <input id="duration" type="number" min="1" max="180" value="30" />
+        </div>
+
+        <div class="actions">
+          <button id="startBtn" class="btn primary">Start</button>
+          <button id="resetBtn" class="btn" disabled>Reset</button>
+          <button id="downloadBtn" class="btn">Download JSON</button>
+        </div>
+      </section>
+
+      <section id="testArea" class="card hidden test-area">
+        <div class="test-top">
+          <div class="left">
+            <div class="meta"><strong>Mode:</strong> <span id="modeLabel">Practice</span></div>
+            <div class="meta"><strong>Week:</strong> <span id="weekLabel">All</span></div>
+          </div>
+          <div class="right">
+            <div id="timer" class="timer">—</div>
+            <div id="progress" class="progress">Q <span id="qIndex">0</span>/<span id="qTotal">0</span></div>
+          </div>
+        </div>
+
+        <div id="questionsContainer" class="questions"></div>
+
+        <div class="controls">
+          <button id="prevBtn" class="btn" disabled>Previous</button>
+          <button id="nextBtn" class="btn" disabled>Next</button>
+          <button id="submitBtn" class="btn primary" disabled>Submit</button>
+        </div>
+      </section>
+
+      <section id="resultArea" class="card hidden result-area">
+        <h2>Result</h2>
+        <div id="resultSummary" class="result-summary"></div>
+        <div id="resultDetails" class="result-details"></div>
+        <div class="actions">
+          <button id="retakeBtn" class="btn">Take another</button>
+          <button id="downloadResultBtn" class="btn">Download Result (JSON)</button>
+        </div>
+      </section>
+
+      <footer class="footer card">
+        <small>Replica site — question bank: Software Project Management</small>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
